@@ -1,0 +1,16 @@
+#new-secret-form {
+  height: 300px;
+  margin-top: -150px;
+
+  input[type=text], textarea {
+    width: 97%;
+  }
+  textarea {
+    height: 4em;
+  }
+}
+@media (max-width: 767px) {
+  #new-secret-form {
+    margin-top: 0;
+  }
+}

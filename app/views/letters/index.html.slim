@@ -1,0 +1,14 @@
+
+a href="#new-secret-form" role="button" class="btn" data-toggle="modal" Write Your Secrete
+
+div class="modal hide" id="new-secret-form" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+  = form_for Letter.new, remote: true do |f|
+    div class="modal-body"
+      h4 대나무숲에 이야기 해보세요.
+      .field
+        = f.text_area :contents, placeholder: "당신의 비밀을 적어주세요."
+      .field
+        = f.text_field :tag_list, placeholder: "태그"
+    div class="modal-footer"
+      button class="btn" data-dismiss="modal" aria-hidden="true" Close
+      button class="btn btn-primary" Save

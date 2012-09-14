@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    meta name="locale" content="#{I18n.locale}"
+    meta name="default-locale" content="#{I18n.default_locale}"
+
+    title 대나무숲
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+    link href="/favicon.ico" rel="shortcut icon"
+
+  body
+    .container
+      .header
+        h1
+          = link_to "대나무숲", root_path
+
+      .contents
+        = yield
+      .footer
+        p we are awesome

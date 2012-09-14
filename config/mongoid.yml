@@ -1,0 +1,8 @@
+development:
+  sessions:
+    default:
+      database: secret_dev
+      hosts:
+        - localhost:27017
+
+production:
