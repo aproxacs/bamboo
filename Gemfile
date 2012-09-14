@@ -27,4 +27,5 @@ gem 'awesome_print'
 gem "mongoid"
 gem 'slim'
 gem 'settingslogic'
+gem 'kaminari'
 gem "mongoid-simple-tags", "0.0.7"

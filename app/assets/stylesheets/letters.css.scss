@@ -1,3 +1,7 @@
+.new-scret-btn {
+  margin-bottom: 10px;
+}
+
 #new-secret-form {
   height: 300px;
   margin-top: -150px;
@@ -9,8 +13,32 @@
     height: 4em;
   }
 }
+
 @media (max-width: 767px) {
   #new-secret-form {
     margin-top: 0;
+  }
+}
+
+ul.letter-stream {
+  margin: 0;
+  border: 1px solid #aaa;
+  width: 600px;
+
+  @include border-radius(5px);
+  li {
+    padding: 5px 10px;
+    border-bottom: dashed 1px #aaa;
+    &:last-child {
+      border: none;
+    }
+    .tags {
+      color: #999;
+    }
+    .time {
+      color: #999;
+      float: right;
+      font-size: 0.9em;
+    }
   }
 }

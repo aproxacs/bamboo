@@ -57,6 +57,9 @@ GEM
       jquery-rails
       railties (>= 3.1.0)
     json (1.7.5)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     libv8 (3.3.10.4)
     mail (2.4.4)
       i18n (>= 0.4.0)
@@ -136,6 +139,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
   jquery-ui-rails
+  kaminari
   mongoid
   mongoid-simple-tags (= 0.0.7)
   rails (= 3.2.8)

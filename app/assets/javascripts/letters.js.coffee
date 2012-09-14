@@ -1,2 +1,2 @@
 $ ->
-  $("#new-secret-form").modal("show")
+  # $("#new-secret-form").modal("show")

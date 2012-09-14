@@ -1,0 +1,5 @@
+li id="#{letter.id}"
+  p.words= letter.contents
+  .extras
+    span.tags= "tags : #{letter.tags.join(", ")}"
+    span.time= "#{time_ago_in_words(letter.created_at)} ago"

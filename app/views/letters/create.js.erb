@@ -1,1 +1,7 @@
-$("#new-secret-form").modal("hide")
+$("#new-secret-form").modal("hide");
+$("#new-secret-form input[type=text], #new-secret-form textarea").val("");
+
+$("ul.letter-stream").prepend(
+  "<%= escape_javascript(render(@letter)) %>"
+);
+

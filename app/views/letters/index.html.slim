@@ -1,5 +1,6 @@
 
-a href="#new-secret-form" role="button" class="btn" data-toggle="modal" Write Your Secrete
+.new-scret-btn
+  a href="#new-secret-form" role="button" class="btn" data-toggle="modal" Write Your Secrete
 
 div class="modal hide" id="new-secret-form" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
   = form_for Letter.new, remote: true do |f|
@@ -12,3 +13,10 @@ div class="modal hide" id="new-secret-form" role="dialog" aria-labelledby="myMod
     div class="modal-footer"
       button class="btn" data-dismiss="modal" aria-hidden="true" Close
       button class="btn btn-primary" Save
+
+
+
+ul.letter-stream
+  - @letters.each do |letter|
+    = render letter
+

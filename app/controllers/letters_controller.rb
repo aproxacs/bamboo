@@ -1,6 +1,6 @@
 class LettersController < ApplicationController
   def index
-
+    @letters = Letter.order_by(:created_at.desc).all page: params[:page]
   end
 
   def create
