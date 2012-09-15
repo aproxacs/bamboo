@@ -12,4 +12,8 @@ class LettersController < ApplicationController
       format.js
     end
   end
+
+  def new
+    render layout: "landing_layout"
+  end
 end

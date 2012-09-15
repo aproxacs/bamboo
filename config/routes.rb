@@ -2,6 +2,7 @@ Secret::Application.routes.draw do
   root :to => 'letters#index'
 
   resources :letters
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
