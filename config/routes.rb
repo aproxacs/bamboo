@@ -1,5 +1,5 @@
 Secret::Application.routes.draw do
-  root :to => 'letters#index'
+  root :to => 'letters#letters/new'
 
   resources :letters do
     member do
