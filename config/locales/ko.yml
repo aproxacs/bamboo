@@ -1,0 +1,5 @@
+ko:
+  letter:
+    already_voted: "이미 추천하셨습니다."
+    vote_succeeded: "글이 추천되었습니다."
+
