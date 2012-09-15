@@ -32,6 +32,7 @@ class LettersController < ApplicationController
   end
 
   def new
+    @samples = Letter.limit(5).all.map {|l| l.contents.size > 27 ? l.contents[0..27] + ".." : l.contents}
     render layout: "landing_layout"
   end
 end

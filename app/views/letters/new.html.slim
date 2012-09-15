@@ -2,6 +2,11 @@ div class="row" id="new_letter_wraper"
   div class="span5 offset4"
     h5 다른 사람들에게는 말못할 생각을 적어보세요.
     = form_for Letter.new, remote: true do |f|
+      .samples
+        ul
+          - @samples.each do |sample|
+            li=sample
+
       .field
         = f.text_area :contents, rows: 5, class: 'span5'
       .field
