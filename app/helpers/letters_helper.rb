@@ -1,10 +1,10 @@
 module LettersHelper
 
-	def fb_share_url(letter)
-		"http://www.facebook.com/dialog/feed?app_id=502056609805917&link=#{letter_url(letter)}&picture=http://s3-ap-northeast-1.amazonaws.com/ulabla-image/logo.png&name=Bamboo&caption=http://bit.ly/bamboo_forest&caption=%20&description=#{letter.contents}&redirect_uri=http://gentle-refuge-4246.herokuapp.com/"
-	end
+  def fb_share_url(letter)
+    "http://www.facebook.com/dialog/feed?app_id=#{Settings.fb_key}&link=#{letter_url(letter)}&picture=#{Settings.fb_picture}&caption=#{Settings.fb_caption}&name=#{Settings.app_name}&description=#{letter.contents}&redirect_uri=#{Settings.host}"
+  end
 
-	def twitt_share_url(letter)
-		"http://twitter.com/?status=urlencode(abc#{letter.contents} # http://bit.ly/bamboo_forest)"
-	end
+  def twitt_share_url(letter)
+    "http://twitter.com/?status=#{letter.contents} ##{Settings.app_name} #{Settings.fb_caption}"
+  end
 end
