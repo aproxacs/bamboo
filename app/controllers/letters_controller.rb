@@ -33,7 +33,8 @@ class LettersController < ApplicationController
   end
 
   def new
-    @samples = Letter.find(Settings.sample_ids.split(",")).map {|l| l.contents}
+    @samples = Letter.find(Settings.sample_ids.split(",")).map {|l| l.contents.size > 26 ? l.contents[0..26] + ".." : l.contents}
+
     render layout: "landing_layout"
   end
 end
