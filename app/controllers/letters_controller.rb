@@ -3,6 +3,11 @@ class LettersController < ApplicationController
     @letters = Letter.order_by(:created_at.desc).all page: params[:page]
   end
 
+  def show
+    @letter = Letter.find params[:id]
+    render layout: "letter_show"
+  end
+
   def create
     @letter = Letter.new params[:letter]
     @letter.save!

@@ -91,7 +91,7 @@ ul.letter-stream {
   text-align: center;
 }
 
-#box-body { 
+#box-body {
   margin-top: 120px;
   padding: 0;
   textarea {
@@ -126,4 +126,36 @@ ul.letter-stream {
 
 #facebook_share {
   margin-left: 30px;
+}
+
+
+.letter-show {
+  font-size: 1.2em;
+  margin-top: 2em;
+  .tags {
+    color: #999;
+  }
+  .time {
+    color: #999;
+    float: right;
+    font-size: 0.9em;
+  }
+
+  .menu {
+    overflow: hidden;
+    span.vote, a {
+      float:right;
+    }
+    span.vote {
+      margin-right: 10px;
+      margin-top: 5px;
+      .vote-count {
+        margin-left: 5px;
+      }
+    }
+    a {
+      @include transition (opacity 0.5s ease-in-out);
+    }
+  }
+
 }
