@@ -4,7 +4,9 @@ div id="box"
       label id="box-body-label" 다른 사람들에게는 말못할 생각을 적어보세요.
       .field
           = f.text_area :contents
-      div style="width: 100px;" class="btn" POST
+      .field
+          = f.text_field :tag_list, placeholder: '태그'
+      = submit_tag "저장하기", class: "btn" 
       label id="box-body-bottom-label" 공감되는 다른 사람들의 비밀을 알려드립니다.
 
   div id="sns_share"
