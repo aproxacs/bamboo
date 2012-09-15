@@ -27,7 +27,7 @@ class LettersController < ApplicationController
   end
 
   def new
-    @samples = Letter.order_by(:created_at.desc).limit(5).all.map {|l| l.contents}
+    @samples = Letter.find(["50544938ab1ad1020000000a", "50544948ab1ad1020000000b", "50544959ab1ad1020000000c", "505449c9ab1ad1020000000d", "505449f1ab1ad1020000000e"]).map {|l| l.contents}
     render layout: "landing_layout"
   end
 end
