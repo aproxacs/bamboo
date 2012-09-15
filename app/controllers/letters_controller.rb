@@ -25,4 +25,8 @@ class LettersController < ApplicationController
       @voted = true
     end
   end
+
+  def new
+    render layout: "landing_layout"
+  end
 end

@@ -71,3 +71,59 @@ ul.letter-stream {
 
   }
 }
+
+#message-box {
+  position: fixed;
+  width: 94%;
+  z-index: 1000;
+}
+
+#box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 751px;
+  height: 581px;
+  margin: -290px 0 0 -375px;
+  background: image-url("pinlight.jpeg") no-repeat right;
+  background-position: 50px 30px;
+  background-clip: none;
+  text-align: center;
+}
+
+#box-body { 
+  margin-top: 120px;
+  padding: 0;
+  textarea {
+    width: 360px;
+    height: 180px;
+    background-opacity: 0.0;
+    border-style: none;
+    border-radius: 0;
+    resize: none;
+    @include box-shadow(5px 7px 4px 0px rgba(0, 0, 0, 0.5));
+  }
+  input[type="text"] {
+    width: 360px;
+    margin-top: -10px;
+    border: 0px;
+    border-top: 1px solid #aaa;
+    border-radius: 0;
+    resize: none;
+    @include box-shadow(5px 7px 4px 0px rgba(0, 0, 0, 0.5));
+  }
+}
+
+#box-body-label {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+#box-body-bottom-label {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+#facebook_share {
+  margin-left: 30px;
+}
