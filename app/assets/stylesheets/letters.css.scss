@@ -28,9 +28,16 @@ ul.letter-stream {
   li {
     padding: 5px 10px;
     border-bottom: dashed 1px #aaa;
+
     &:last-child {
       border: none;
     }
+
+    &:hover {
+      background-color: #E7EFF8;
+    }
+    @include transition (all 0.5s ease-in-out);
+
     .tags {
       color: #999;
     }
