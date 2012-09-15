@@ -10,4 +10,7 @@ class Letter
     inc(:vote_count, 1)
   end
 
+  def vote_key
+    "vote_#{id}"
+  end
 end

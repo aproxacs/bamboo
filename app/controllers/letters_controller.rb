@@ -15,6 +15,14 @@ class LettersController < ApplicationController
 
   def vote
     @letter = Letter.find params[:id]
-    @letter.vote!
+    if session[@letter.vote_key] == true
+      @message = I18n.t("letter.already_voted")
+      @voted = false
+    else
+      @letter.vote!
+      session[@letter.vote_key] = true
+      @message = I18n.t("letter.vote_succeeded")
+      @voted = true
+    end
   end
 end
