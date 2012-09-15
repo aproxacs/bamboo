@@ -4,7 +4,14 @@ li id="#{letter.id}"
     span.tags= "tags : #{letter.tags.join(", ")}"
     span.time= "#{time_ago_in_words(letter.created_at)} ago"
   .menu
-    = link_to "공감", vote_letter_path(letter), class: "btn btn-primary", remote: true, method: :post
-    span.vote
-      span 공감
+  	= link_to "FB_Share", fb_share_url(letter), class: "btn-primary btn", target: "_self"
+  	= link_to "Twit_Share", twitt_share_url(letter), class: "btn-primary btn", target: "_self"
+  	= link_to "공감", vote_letter_path(letter), class: "btn btn-primary", remote: true, method: :post
+
+  	span.vote
+  	  span 공감
       span.vote-count= letter.vote_count
+
+
+
+
