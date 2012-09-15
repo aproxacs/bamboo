@@ -1,6 +1,7 @@
 class LettersController < ApplicationController
   def index
-    @letters = Letter.order_by(:created_at.desc).all page: params[:page]
+    @letters = @letters_recent = Letter.order_by(:created_at.desc).limit(100).all page: params[:page]
+    @letters_popular = Letter.where(:created_at.gte => 1.day.ago).order_by(:vote_count.desc).all page: params[:page]
   end
 
   def show
