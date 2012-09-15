@@ -91,9 +91,30 @@ ul.letter-stream {
   text-align: center;
 }
 
-#box-body { 
+#box-body {
   margin-top: 120px;
   padding: 0;
+  .samples {
+    width: 370px;
+    height: 30px;
+
+    overflow: hidden;
+    background-color: #cccbcb;
+    margin-bottom: 5px;
+    display: inline-block;
+    position: relative;
+    ul {
+      position: absolute;
+      @include transition (all 0.5s ease-in-out);
+      li {
+        padding: 5px 0 5px 10px;
+//        padding: 9px 0 10px 10px;
+//        margin-left: 10px;
+      }
+    }
+
+  }
+
   textarea {
     width: 360px;
     height: 180px;
