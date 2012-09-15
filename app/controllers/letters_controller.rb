@@ -12,4 +12,9 @@ class LettersController < ApplicationController
       format.js
     end
   end
+
+  def vote
+    @letter = Letter.find params[:id]
+    @letter.vote!
+  end
 end

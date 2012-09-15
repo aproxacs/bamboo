@@ -1,7 +1,12 @@
 Secret::Application.routes.draw do
   root :to => 'letters#index'
 
-  resources :letters
+  resources :letters do
+    member do
+      post "vote"
+    end
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
