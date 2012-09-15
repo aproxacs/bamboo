@@ -4,6 +4,7 @@ Secret::Application.routes.draw do
   resources :letters do
     member do
       post "vote"
+      get "related"
     end
   end
 

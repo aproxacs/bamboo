@@ -37,4 +37,9 @@ class LettersController < ApplicationController
 
     render layout: "landing_layout"
   end
+
+  def related
+    @letter = Letter.find params[:id]
+    @related_letters = @letter.related_letters
+  end
 end

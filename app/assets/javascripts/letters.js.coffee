@@ -1,5 +1,5 @@
 $ ->
-  $("#new-secret-form").modal("show")
+  # $("#new-secret-form").modal("show")
 
   max = $("#new_letter_wraper .samples li").length
   count = 0
@@ -9,3 +9,13 @@ $ ->
     if count >= max
       count = 0
   , 3000
+
+  $("ul.letter-stream > li .words").live "click", ->
+    letter_id = $(this).parents("li").attr("id")
+
+    if $(this).parents("li").find(".related-letters li").length > 0
+      $(this).parents("li").find(".related-letters").html("")
+    else
+      $("ul.letter-stream .related-letters").html("")
+      $.getScript("/letters/#{letter_id}/related")
+
