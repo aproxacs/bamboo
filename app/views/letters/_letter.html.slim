@@ -14,7 +14,7 @@ li id="#{letter.id}" class="letter-#{letter.id} letter-item"
         li.facebook
           = link_to "FB Send", fb_share_url(letter), class: "btn-primary btn fb-send", target: "_self"
         li.twitter
-          = link_to "Twitter", fb_share_url(letter), class: "btn-primary btn twitter-share-button", target: "_self"
+          = link_to "Twitter", twitt_share_url(letter), class: "btn-primary btn twitter-share-button", target: "_self"
 
   .related-letters.comments
 
