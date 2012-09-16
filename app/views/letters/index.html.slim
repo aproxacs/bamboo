@@ -18,5 +18,8 @@ div class="modal hide" id="new-secret-form" role="dialog" aria-labelledby="myMod
 .row
   .span8
     ul.letter-stream
+      li id="exist_new_letter" style="display: none;"
+        a href='#' id="link"
+          p.words id="message" 새로운 메세지가 0개 있습니다.
       - @letters.each do |letter|
         = render letter

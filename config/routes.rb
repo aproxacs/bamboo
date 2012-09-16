@@ -5,6 +5,9 @@ Secret::Application.routes.draw do
     member do
       post "vote"
     end
+    collection do
+      get "recent"
+    end
   end
 
   # The priority is based upon order of creation:
