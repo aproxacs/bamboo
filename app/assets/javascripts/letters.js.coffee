@@ -1,4 +1,7 @@
 $ ->
+  $("#new-secret-form").on "shown", ->
+    $("#new-secret-form textarea").focus()
+
   $("#new-secret-form").modal("show")
 
   max = $("#new_letter_wraper .samples li").length
@@ -29,5 +32,11 @@ $ ->
     $(this).parents("ul").find("li").removeClass("current")
     $(this).parents("li").addClass("current")
     $($(this).attr("href")).fadeIn()
+
+  $("form[data-remote=true]").bind "ajax:before", (event) ->
+    $(this).find(".submit.btn").button("loading")
+
+  $("form[data-remote=true]").bind "ajax:complete", (event) ->
+    $(this).find(".submit.btn").button("reset")
 
 
