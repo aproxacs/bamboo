@@ -8,6 +8,8 @@ class Letter
   field :root_id, type: String
   field :child_ids, type: Array, default: []
 
+  validates_length_of :contents, minimum: 1
+
   after_create :manage_related
   def manage_related
     if root

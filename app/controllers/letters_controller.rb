@@ -1,4 +1,20 @@
 class LettersController < ApplicationController
+
+  rescue_from Mongoid::Errors::Validations do |exception|
+    @message = exception.document.errors.full_messages.join(", ")
+
+    respond_to do |format|
+      format.html do
+      flash[:alert] = @message
+        redirect_to letters_path
+      end
+      format.js do
+        render template: "/letters/show_error"
+      end
+    end
+  end
+
+
   def index
     @letters = @letters_recent = Letter.order_by(:created_at.desc).limit(100).all page: params[:page]
     @letters_popular = Letter.where(:created_at.gte => 1.day.ago).order_by(:vote_count.desc).all page: params[:page]
@@ -18,12 +34,7 @@ class LettersController < ApplicationController
       format.js
     end
 
-    new_letter_html = render_to_string :partial => 'letter', :locals => {:letter => @letter}
-
-    Pusher['letter'].trigger!('new_letter', {
-      :tag => new_letter_html,
-      :model => @letter
-    })
+    send_pusher_notification if Rails.env.production?
   end
 
   def vote
@@ -50,4 +61,15 @@ class LettersController < ApplicationController
     @related_letters = @letter.related_letters
     @related_letters.push @letter.root if @letter.root
   end
+
+
+  private
+    def send_pusher_notification
+      new_letter_html = render_to_string :partial => 'letter', :locals => {:letter => @letter}
+
+      Pusher['letter'].trigger!('new_letter', {
+                                  :tag => new_letter_html,
+                                  :model => @letter
+      })
+    end
 end
