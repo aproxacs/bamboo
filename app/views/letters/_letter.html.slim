@@ -2,7 +2,7 @@ li id="#{letter.id}" class="letter-#{letter.id} letter-item"
   .main-letter
     .words= letter.contents
     .tags
-      span &nbsp;
+      span 태그 :&nbsp
       = (letter.tags || []).join(", ")
     .time= "#{time_ago_in_words(letter.created_at)} 전"
     .vibe
@@ -13,7 +13,7 @@ li id="#{letter.id}" class="letter-#{letter.id} letter-item"
     .sns
       ul
         li.facebook
-          = link_to image_tag("btn-facebook.png"), fb_share_url(letter), target: "_self" 
+          = link_to image_tag("btn-facebook.png"), fb_share_url(letter), target: "_self"
         li.twitter
           = link_to image_tag("btn-twitter.png"), twitt_share_url(letter), target: "_self"
 
