@@ -7,7 +7,7 @@ li id="#{letter.id}" class="letter-#{letter.id} letter-item"
     .time= "#{time_ago_in_words(letter.created_at)} 전"
     .vibe
       = link_to vote_letter_path(letter), class: "btn btn-small btn-success btn-vibe", remote: true, method: :post do
-        i.icon-white 14
+        i.icon-white= letter.vote_count
         span "공감"
     .sns
       ul
