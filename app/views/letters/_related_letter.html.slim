@@ -1,0 +1,5 @@
+li
+ p.words= rl.contents
+ .extras
+   span.tags= "tags : #{(rl.tags || []).join(", ")}"
+   span.time= "#{time_ago_in_words(rl.created_at)} 전"

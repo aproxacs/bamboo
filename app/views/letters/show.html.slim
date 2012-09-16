@@ -2,8 +2,8 @@
   .letter-show.span6 id="#{@letter.id}"
     p.words= @letter.contents
     .extras
-      span.tags= "tags : #{@letter.tags.join(", ")}"
-      span.time= "#{time_ago_in_words(@letter.created_at)} ago"
+      span.tags= "tags : #{(@letter.tags || []).join(", ")}"
+      span.time= "#{time_ago_in_words(@letter.created_at)} 전"
     .menu
       = link_to "공감", vote_letter_path(@letter), class: "btn btn-primary", remote: true, method: :post
       span.vote

@@ -1,11 +1,21 @@
 $("#new-secret-form").modal("hide");
 $("#new-secret-form input[type=text], #new-secret-form textarea").val("");
 
-$("<%= escape_javascript(render(@letter)) %>").insertAfter( 
-  $("#exist_new_letter")
+// $("<%= escape_javascript(render(@letter)) %>").insertAfter( 
+//   $("#exist_new_letter")
+// );
+
+$("ul#recent-letters").prepend(
+  "<%= escape_javascript(render(@letter)) %>"
 );
+
 // $("ul.letter-stream").prepend(
 //   "<%= escape_javascript(render(@letter)) %>"
 // );
+
+$(".letter-<%= @letter.id %> ul.related-letters-list").append(
+  "<%= escape_javascript(render(@letter)) %>"
+);
+
 
 Message.notice("글이 추가되었습니다.");

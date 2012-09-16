@@ -1,6 +1,7 @@
 class LettersController < ApplicationController
   def index
-    @letters = Letter.order_by(:created_at.desc).all page: params[:page]
+    @letters = @letters_recent = Letter.order_by(:created_at.desc).limit(100).all page: params[:page]
+    @letters_popular = Letter.where(:created_at.gte => 1.day.ago).order_by(:vote_count.desc).all page: params[:page]
   end
 
   def show
@@ -39,10 +40,13 @@ class LettersController < ApplicationController
   end
 
   def new
-    @samples = Letter.limit(5).all.map {|l| l.contents.size > 27 ? l.contents[0..27] + ".." : l.contents}
+    @samples = Letter.find(Settings.sample_ids.split(",")).map {|l| l.contents.size > 26 ? l.contents[0..26] + ".." : l.contents}
+
     render layout: "landing_layout"
   end
 
-  def recent
+  def related
+    @letter = Letter.find params[:id]
+    @related_letters = @letter.related_letters
   end
 end

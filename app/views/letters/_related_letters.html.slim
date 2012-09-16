@@ -1,0 +1,12 @@
+ul.related-letters-list
+  - related_letters.each do |rl|
+    - next if rl == letter
+    = render partial: "related_letter", locals: {rl: rl}
+
+= form_for Letter.new, remote: true, html: {class: "new-child-letter-form"} do |f|
+  = hidden_field_tag "letter[root_id]", letter.root ? letter.root.id.to_s : letter.id.to_s
+  = hidden_field_tag "letter[tag_list]", ""
+  .field
+    = f.text_area :contents, placeholder: "공감글을 적어주세요.", rows: 3, style: "width: 90%"
+  .actions
+    = submit_tag "저장하기", class: "btn"

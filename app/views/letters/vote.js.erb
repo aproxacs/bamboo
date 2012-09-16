@@ -1,7 +1,7 @@
 
 
 <%- if @voted %>
-  $("#<%= @letter.id %> .vote-count").text(<%= @letter.vote_count %>);
+  $(".letter-<%= @letter.id %> .vote-count").text(<%= @letter.vote_count %>);
   Message.notice('<%= @message %>');
 <%- else %>
   Message.alert('<%= @message %>');
