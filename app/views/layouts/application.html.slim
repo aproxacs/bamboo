@@ -28,6 +28,6 @@ html
           .contents
             = yield
           .footer
-            p we are awesome
+            p= mail_to "lsksth@gmail.com", "문의하기"
 
     =show_message_if_exist
