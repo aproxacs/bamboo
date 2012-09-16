@@ -18,4 +18,10 @@ $ ->
     else
       $("ul.letter-stream .related-letters").html("")
       $.getScript("/letters/#{letter_id}/related")
+  $("#popular-letters").hide()
+
+  $(".letter-stream-tabs a").click (event) ->
+    event.preventDefault()
+    $(".letter-stream").hide()
+    $($(this).attr("href")).fadeIn()
 
