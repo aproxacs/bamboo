@@ -6,7 +6,7 @@
   .btn-write {
     color: #BDBDBD;
     font-family: "나눔손글씨 펜", serif;
-    background: url('bg_paper.jpg');
+    background: url(image_path('bg_paper.jpg'));
     padding: 10px;
     font-size: 25px;
     width: 398px;
@@ -17,14 +17,16 @@
 }
 
 #new-secret-form {
-  height: 300px;
+  // height: 300px;
   margin-top: -150px;
-
-  input[type=text], textarea {
-    width: 97%;
-  }
-  textarea {
-    height: 4em;
+  form {
+    margin-bottom: 0;
+    input[type=text], textarea {
+      width: 97%;
+    }
+    textarea {
+      height: 4em;
+    }
   }
 }
 
@@ -138,6 +140,32 @@ ul.letter-stream {
       position: absolute;
       right: 5px;
       top: 30px;
+      .btn-vibe {
+        width: 84px;
+        border-radius: 13px;
+        background-color: hsl(142, 53%, 32%) !important;
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2b8c4e", endColorstr="#267c46");
+        background-image: -khtml-gradient(linear, left top, left bottom, from(#2b8c4e), to(#267c46));
+        background-image: -moz-linear-gradient(top, #2b8c4e, #267c46);
+        background-image: -ms-linear-gradient(top, #2b8c4e, #267c46);
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2b8c4e), color-stop(100%, #267c46));
+        background-image: -webkit-linear-gradient(top, #2b8c4e, #267c46);
+        background-image: -o-linear-gradient(top, #2b8c4e, #267c46);
+        background-image: linear-gradient(#2b8c4e, #267c46);
+        border-color: #267c46 #267c46 hsl(142, 53%, 31%);
+        color: #fff !important;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.06);
+        -webkit-font-smoothing: antialiased;
+        i {
+            border-radius: 9px;
+            background-color: #17301e;
+            padding: 0px;
+            text-decoration: none;
+            float: left;
+            margin-top: 2px;
+        }
+      }
   }
 }
 
