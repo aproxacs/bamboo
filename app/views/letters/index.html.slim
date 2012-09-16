@@ -24,6 +24,7 @@ div class="modal hide" id="new-secret-form" role="dialog" aria-labelledby="myMod
     ul#recent-letters.letter-stream
       - @letters_recent.each do |letter|
         = render letter
+
     ul#popular-letters.letter-stream
       - @letters_popular.each do |letter|
         = render letter

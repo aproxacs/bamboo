@@ -1,11 +1,11 @@
 $("#new-secret-form").modal("hide");
 $("#new-secret-form input[type=text], #new-secret-form textarea").val("");
 
-$("ul.letter-stream").prepend(
+$("ul#recent-letters").prepend(
   "<%= escape_javascript(render(@letter)) %>"
 );
 
-$("#<%= @letter.id %> ul.related-letters-list").append(
+$(".letter-<%= @letter.id %> ul.related-letters-list").append(
   "<%= escape_javascript(render(@letter)) %>"
 );
 
