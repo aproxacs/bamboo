@@ -2,7 +2,7 @@ li id="#{letter.id}" class="letter-#{letter.id} letter-item"
   .main-letter
     .words= letter.contents
     .tags
-      span aa
+      span &nbsp;
       = (letter.tags || []).join(", ")
     .time= "#{time_ago_in_words(letter.created_at)} 전"
     .vibe
