@@ -1,18 +1,18 @@
 
 .new-scret-btn
-  a href="#new-secret-form" role="button" class="btn" data-toggle="modal" Write Your Secrete
+  a href="#new-secret-form" role="button" class="btn" data-toggle="modal" 말 못할 비밀을 적어주세요.
 
 div class="modal hide" id="new-secret-form" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
   = form_for Letter.new, remote: true do |f|
     div class="modal-body"
-      h4 대나무숲에 이야기 해보세요.
+      h4 말 못할 비밀을 적어주세요.
       .field
         = f.text_area :contents, placeholder: "당신의 비밀을 적어주세요."
       .field
         = f.text_field :tag_list, placeholder: "태그"
     div class="modal-footer"
-      button class="btn" data-dismiss="modal" aria-hidden="true" Close
-      button class="btn btn-primary" Save
+      button class="btn" data-dismiss="modal" aria-hidden="true" 취소
+      button class="btn btn-primary" 저장하기
 
 
 .row
@@ -25,8 +25,13 @@ div class="modal hide" id="new-secret-form" role="dialog" aria-labelledby="myMod
     /   - @letters.each do |letter|
 
     .letter-stream-tabs
-      = link_to "recent", "#recent-letters"
-      = link_to "popular", "#popular-letters"
+      ul
+        li.current
+          = link_to "최신순", "#recent-letters"
+        li.seperator
+        li
+          = link_to "인기순", "#popular-letters"
+
 
     ul#recent-letters.letter-stream
       - @letters_recent.each do |letter|
