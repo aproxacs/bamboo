@@ -17,6 +17,13 @@ class LettersController < ApplicationController
       format.html {redirect_to letters_path}
       format.js
     end
+
+    new_letter_html = render_to_string :partial => 'letter', :locals => {:letter => @letter}
+
+    Pusher['letter'].trigger!('new_letter', {
+      :tag => new_letter_html,
+      :model => @letter
+    })
   end
 
   def vote

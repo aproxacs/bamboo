@@ -6,6 +6,9 @@ Secret::Application.routes.draw do
       post "vote"
       get "related"
     end
+    collection do
+      get "recent"
+    end
   end
 
   # The priority is based upon order of creation:

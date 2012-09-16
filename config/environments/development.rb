@@ -34,4 +34,8 @@ Secret::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  Pusher.app_id = '27762'
+  Pusher.key = 'ece90a7f4794c276c97e'
+  Pusher.secret = 'ad2ed9b102e3e1bacce6'
 end
