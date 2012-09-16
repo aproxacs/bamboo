@@ -7,14 +7,16 @@ li id="#{letter.id}" class="letter-#{letter.id} letter-item"
     .time= "#{time_ago_in_words(letter.created_at)} 전"
     .vibe
       = link_to vote_letter_path(letter), class: "btn btn-small btn-success btn-vibe", remote: true, method: :post do
-        i.icon-white= letter.vote_count
-        span "공감"
+        i.icon-white = letter.vote_count
+        span 공감
+
     .sns
       ul
         li.facebook
-          = link_to "FB Send", fb_share_url(letter), class: "btn-primary btn fb-send", target: "_self"
+          = link_to "Facebook", fb_share_url(letter), target: "_self" 
         li.twitter
-          = link_to "Twitter", twitt_share_url(letter), class: "btn-primary btn twitter-share-button", target: "_self"
+          = link_to "Twitter", twitt_share_url(letter), target: "_self"
+
 
   .related-letters.comments
 

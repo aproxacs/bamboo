@@ -14,6 +14,10 @@ body.landing {
   background-color: black;
 }
 
+body {
+  background: url(image_path('bg_fabric.jpg'));
+}
+
 .header {
   position: relative;
   .site-sns {
