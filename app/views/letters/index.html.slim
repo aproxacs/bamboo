@@ -19,6 +19,7 @@ div class="modal hide" id="new-secret-form" role="dialog" aria-labelledby="myMod
 
 .row
   .span8
+
     .letter-stream-tabs
       ul
         li.current
@@ -29,6 +30,10 @@ div class="modal hide" id="new-secret-form" role="dialog" aria-labelledby="myMod
 
 
     ul#recent-letters.letter-stream
+      li id="exist_new_letter" class="letter-item"
+        .main-letter
+          a href='#' id="link"
+            .words id="message" 새로운 메세지가 0개 있습니다.
       - @letters_recent.each do |letter|
         = render letter
 

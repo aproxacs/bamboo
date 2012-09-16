@@ -52,6 +52,7 @@ ul.letter-stream {
 
   li.letter-item {
     .main-letter {
+      cursor: pointer;
       position: relative;
       div.words {
         margin: 20px 135px 10px 35px;
@@ -223,4 +224,8 @@ ul.letter-stream {
       color: white;
   }
 
+}
+
+#exist_new_letter{
+  display: none;
 }

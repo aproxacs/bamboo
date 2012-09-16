@@ -8,11 +8,29 @@ html
 
     title 대나무숲
     = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "http://js.pusher.com/1.12/pusher.min.js"
     = javascript_include_tag "application"
     = csrf_meta_tags
 
     link href="/favicon.ico" rel="shortcut icon"
 
+    - if Rails.env.production?
+      javascript:
+        var _gaq = _gaq || [];
+
+        _gaq.push(['_setAccount', 'UA-34843755-1']);
+
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+
+        })();
   body
     .container
       #message-box
@@ -29,6 +47,6 @@ html
           .contents
             = yield
           .footer
-            p we are awesome
+            p= mail_to "lsksth@gmail.com", "문의하기"
 
     =show_message_if_exist

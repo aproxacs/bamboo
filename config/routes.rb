@@ -1,10 +1,13 @@
 Secret::Application.routes.draw do
-  root :to => 'letters#new'
+  root :to => 'letters#index'
 
   resources :letters do
     member do
       post "vote"
       get "related"
+    end
+    collection do
+      get "recent"
     end
   end
 

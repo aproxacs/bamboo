@@ -1,5 +1,5 @@
 $ ->
-  # $("#new-secret-form").modal("show")
+  $("#new-secret-form").modal("show")
 
   max = $("#new_letter_wraper .samples li").length
   count = 0
@@ -25,5 +25,9 @@ $ ->
   $(".letter-stream-tabs a").click (event) ->
     event.preventDefault()
     $(".letter-stream").hide()
+    console.log($(this).parents("ul").find("a"))
+    $(this).parents("ul").find("li").removeClass("current")
+    $(this).parents("li").addClass("current")
     $($(this).attr("href")).fadeIn()
+
 
