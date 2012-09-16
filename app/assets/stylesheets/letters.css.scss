@@ -1,5 +1,19 @@
 .new-scret-btn {
-  margin-bottom: 10px;
+  margin: auto;
+  text-align: center;
+  border-radius: 10px;
+
+  .btn-write {
+    color: #BDBDBD;
+    font-family: "나눔손글씨 펜", serif;
+    background: url('bg_paper.jpg');
+    padding: 10px;
+    font-size: 25px;
+    width: 398px;
+    margin-left: auto;
+    box-shadow: 2px 2px 2px 1px #aaa;
+  }
+
 }
 
 #new-secret-form {
@@ -21,149 +35,113 @@
 }
 
 ul.letter-stream {
-  margin: 0;
   border: 1px solid #aaa;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 2px 2px 2px 1px #ccc;
+  li.letter-item {
+      border-bottom: dashed 1px #aaa;
+      overflow: hidden;
+      position: relative;
+  }
+  li.letter-item:last-child {
+      border-bottom: none;
+  }
 
-  @include border-radius(5px);
-  li {
-    padding: 5px 10px;
-    border-bottom: dashed 1px #aaa;
-
-    &:last-child {
-      border: none;
+  li.letter-item {
+    .main-letter {
+      position: relative;
+      div.words {
+        margin: 20px 135px 10px 35px;
+        font-size: 14px;
+        line-height: 23px;
+        float: left;
+      }
+      div.tags {
+        color: #999;
+        clear: both;
+        margin-left: 35px;
+        margin-bottom: 18px;
+        font-size: 12px;
+      }
+      div.time {
+        color: #999;
+        float: right;
+        font-size: 12px;
+        position: absolute;
+        top: 4px;
+        right: 13px;
+      }
+      div.sns {
+        position: absolute;
+        right: 0;
+        bottom: -4px;
+        display: none
+      }
     }
 
-    &:hover {
-      background-color: #E7EFF8;
-    }
-    @include transition (all 0.5s ease-in-out);
+  }
 
-    .tags {
-      color: #999;
+  li.letter-item div.comments {
+    clear: both;
+    background-color: #e7efea;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: inset 0 2px 2px #aaa;
+    form {
+      margin-top: 8px;
     }
-    .time {
+  }
+  li.letter-item div.comments textarea {
+      width: 90%;
+      height: 18px;
+      line-height: 18px;
+      margin: auto;
+  }
+  li.letter-item div.comments ul {
+      margin-top: 8px;
+      text-align: left;
+  }
+  li.letter-item div.comments li {
+      padding: 0;
+      clear: both;
+      overflow: hidden;
+      border-top: dashed 1px #aaa;
+      position: relative;
+  }
+  li.letter-item div.comments li .words {
+      margin: 10px 84px 10px 4px;
+      float: left;
+  }
+  li.letter-item div.comments li .time {
+      position: absolute;
+      top: 11px;
       color: #999;
       float: right;
-      font-size: 0.9em;
-    }
+      font-size: 12px;
+      right: 13px;
+  }
 
-    .menu {
+  li.letter-item:hover div.sns {
+      display: block;
+  }
+
+  li.letter-item div.sns ul {
       overflow: hidden;
-      span.vote, a {
-        float:right;
-      }
-      span.vote {
-        margin-right: 10px;
-        margin-top: 5px;
-        .vote-count {
-          margin-left: 5px;
-        }
-      }
-      a {
-        opacity: 0;
-        @include transition (opacity 0.5s ease-in-out);
-      }
-    }
-
-    &:hover .menu a {
-      opacity: 100;
-    }
-
   }
-}
 
-#message-box {
-  position: fixed;
-  width: 94%;
-  z-index: 1000;
-}
+  li.letter-item div.sns ul li {
+      float: left;
+  }
 
-#new_letter_wraper {
-  text-align: center;
-  .samples {
-    width: 100% ;
-    height: 30px;
-
-    overflow: hidden;
-    background-color: #cccbcb;
-    margin-bottom: 5px;
-    display: inline-block;
-    position: relative;
-    ul {
+  li.letter-item div.vibe {
       position: absolute;
-      @include transition (all 0.5s ease-in-out);
-      li {
-        padding: 5px 0 5px 10px;
-  //        padding: 9px 0 10px 10px;
-  //        margin-left: 10px;
-      }
-    }
-
-  }
-
-}
-
-@mixin smartphone_screen_body {
-  padding-top: 15px;
-  background: rgba(0, 0, 0, 0.9);
-}
-
-@mixin large_screen_body {
-  #new_letter_wraper {
-    margin-top: 150px;
-  }
-  background: black image-url("pinlight_3.jpg") no-repeat center;
-  background-position: 50% 40px;
-}
-
-@media (max-width: 767px) {
-  body.landing {
-    @include smartphone_screen_body;
-  }
-  h5 {
-    color: white;
+      right: 5px;
+      top: 30px;
   }
 }
 
-@media (min-width: 768px) {
-  body.landing {
-    @include large_screen_body;
-  }
-}
 
-#box-body-bottom-label {
-}
-@mixin letter_inputs {
-  @include box-shadow(5px 7px 4px 0px rgba(0, 0, 0, 0.5));
-  border-style: none;
-  border-radius: 0;
-}
-
-#letter_contents {
-  @include letter_inputs;
-  resize: none;
-}
-
-#letter_tag_list {
-  @include letter_inputs;
-  margin-top: -10px;
-  border: 0px;
-  border-top: 1px solid #aaa;
-}
-
-#submit_button_field {
-  text-align: center;
-  margin-top: 5px;
-  .btn {
-    $padding: 40px;
-    padding-left: $padding;
-    padding-right: $padding;
-  }
-}
-
-#facebook_share {
-  margin-left: 30px;
-}
 
 
 .letter-show {
@@ -193,6 +171,28 @@ ul.letter-stream {
     a {
       @include transition (opacity 0.5s ease-in-out);
     }
+  }
+
+}
+
+
+.letter-stream-tabs {
+  overflow: hidden;
+  ul {
+      float: right;
+      font-size: 12px;
+      overflow: hidden;
+  }
+  ul li {
+      float: left;
+  }
+  ul li a {
+      padding: 1px;
+      color: black;
+  }
+  ul li.current a {
+      background-color: #196435;
+      color: white;
   }
 
 }

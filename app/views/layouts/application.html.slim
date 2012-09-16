@@ -16,13 +16,17 @@ html
   body
     .container
       #message-box
-      .header
-        h1
-          = link_to "대나무숲", root_path
+      .row
+        .span8.offset2
+          .header
+            .logo
+              = image_tag "logo.png"
 
-      .contents
-        = yield
-      .footer
-        p we are awesome
+            .site-sns
+
+          .contents
+            = yield
+          .footer
+            p we are awesome
 
     =show_message_if_exist
