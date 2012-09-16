@@ -1,5 +1,5 @@
 $ ->
-  # $("#new-secret-form").modal("show")
+  $("#new-secret-form").modal("show")
 
   max = $("#new_letter_wraper .samples li").length
   count = 0
