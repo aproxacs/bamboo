@@ -5,6 +5,6 @@ module LettersHelper
   end
 
   def twitt_share_url(letter)
-    "http://twitter.com/?status=#{letter.contents} ##{Settings.app_name} #{Settings.fb_caption}"
+    "http://twitter.com/?status=#{letter.contents} %23#{Settings.app_name} #{Settings.fb_caption}"
   end
 end
