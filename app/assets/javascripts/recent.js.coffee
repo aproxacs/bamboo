@@ -15,7 +15,7 @@ $ ->
         $("#exist_new_letter #message").text "새로운 메세지가 #{letter_box.length}개 있습니다."
     , 1500)
 
-  $("#exist_new_letter > #link").click (target) ->
+  $("#exist_new_letter #link").click (target) ->
     $("#exist_new_letter").hide()
     $(letter.tag).insertAfter $("#exist_new_letter") for letter in letter_box
     letter_box = []
