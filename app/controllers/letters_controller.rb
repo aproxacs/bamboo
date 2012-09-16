@@ -48,5 +48,6 @@ class LettersController < ApplicationController
   def related
     @letter = Letter.find params[:id]
     @related_letters = @letter.related_letters
+    @related_letters.push @letter.root if @letter.root
   end
 end
