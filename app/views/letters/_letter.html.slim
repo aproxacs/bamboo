@@ -13,9 +13,9 @@ li id="#{letter.id}" class="letter-#{letter.id} letter-item"
     .sns
       ul
         li.facebook
-          = link_to "Facebook", fb_share_url(letter), target: "_self" 
+          = link_to image_tag("btn-facebook.png"), fb_share_url(letter), target: "_self" 
         li.twitter
-          = link_to "Twitter", twitt_share_url(letter), target: "_self"
+          = link_to image_tag("btn-twitter.png"), twitt_share_url(letter), target: "_self"
 
 
   .related-letters.comments
