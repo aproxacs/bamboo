@@ -50,6 +50,7 @@ ul.letter-stream {
 
   li.letter-item {
     .main-letter {
+      cursor: pointer;
       position: relative;
       div.words {
         margin: 20px 135px 10px 35px;
